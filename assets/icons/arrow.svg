@@ -1,0 +1,7 @@
+<svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="arrow">
+        <line id="Line 1" x1="13.3686" y1="2.33786" x2="2.36858" y2="14.3379" stroke="white" />
+        <line id="Line 2" x1="2" y1="14.5" x2="11" y2="14.5" stroke="white" />
+        <line id="Line 3" x1="1.5" y1="15" x2="1.5" y2="6" stroke="white" />
+    </g>
+</svg>

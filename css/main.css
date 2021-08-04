@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: 400;
+  src: url("../assets/fonts/OpenSansHebrewRegular.woff2");
+}
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: 700;
+  src: url("../assets/fonts/OpenSansHebrewBold.woff2");
+}
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: 200;
+  src: url("../assets/fonts/OpenSansHebrewLight.woff2");
+}
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #222;
+}
+
+body {
+  border: 3px solid yellow;
+  margin: 0;
+  background: var(--bg-color);
+  color: #fff;
+  font-family: "OpenSansHebrew";
+}
+@media (min-width: 850px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  body > * {
+    grid-column: 2/3;
+  }
+  body > svg {
+    grid-column: 1/2;
+  }
+  body > .page-header,
+body > .intro,
+body > .read-more,
+body > .photographer {
+    grid-column: 1/3;
+  }
+}
+
+.logo__haaretz {
+  text-align: center;
+  grid-column: span 2;
+}
+.logo__haaretz a {
+  color: inherit;
+  text-decoration: none;
+  font-family: serif;
+  font: 2rem/6rem serif;
+}
+
+.page-header {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  position: relative;
+  height: 100vh;
+  border: 3px solid red;
+}
+.page-header h1.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  background: #ff1;
+  color: #000;
+  font: 3rem OpenSansHebrew;
+  margin: 0;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.page-header h1.circle span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+@media (min-width: 500px) {
+  .page-header h1.circle {
+    width: 500px;
+    height: 500px;
+    font-size: 6rem;
+  }
+  .page-header h1.circle span {
+    font-size: 1.7rem;
+  }
+}
+.page-header .serial-num {
+  align-self: start;
+  justify-self: end;
+  margin-left: 3rem;
+  color: #ff1;
+  z-index: 1;
+  text-shadow: 2px 2px black;
+  grid-area: 2/1/3/2;
+}
+.page-header .serial-num span {
+  display: inline-block;
+  transform: rotate(45deg);
+}
+@media (min-width: 500px) {
+  .page-header .serial-num {
+    font-size: 2rem;
+  }
+}
+.page-header img {
+  max-width: 100%;
+}
+.page-header img:nth-of-type(1) {
+  grid-area: 2/2/3/3;
+  align-self: end;
+}
+.page-header img:nth-of-type(2) {
+  grid-area: 2/1/4/2;
+  align-self: center;
+  justify-self: end;
+}
+.page-header img:nth-of-type(3) {
+  grid-area: 3/2/4/3;
+  width: 450px;
+}
+.page-header .social-icons {
+  grid-area: 4/2/span 1/span 1;
+  font-size: 1.5rem;
+  align-self: end;
+}
+.page-header .social-icons * {
+  margin-right: 0.5rem;
+}
+@media (min-width: 500px) {
+  .page-header .social-icons {
+    font-size: 2rem;
+  }
+}
+.page-header .writer {
+  grid-area: 4/1/5/2;
+  font-size: 1.5rem;
+  align-self: end;
+  justify-self: end;
+}
+@media (min-width: 500px) {
+  .page-header .writer {
+    font-size: 2rem;
+  }
+}
+
+article.intro {
+  line-height: 2;
+  max-width: 60ch;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.photographer {
+  text-align: center;
+  color: #ff1;
+  font-weight: 700;
+  margin-bottom: 15rem;
+}
+
+.abridged {
+  height: 15rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.abridged::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#0000 60%, var(--bg-color));
+}
+
+button.read-more {
+  margin: -2.5rem auto 3rem;
+  display: block;
+  background: #0000;
+  color: #fff;
+  font: bold 1.1rem sans-serif;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+#svg-map {
+  display: block;
+  margin: 3rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  position: sticky;
+  top: 0;
+  z-index: -1;
+}
+
+article.road-segment {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+article.road-segment .segment-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+article.road-segment > h1 {
+  color: #ff1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20rem;
+}
+article.road-segment .card {
+  padding: 2rem;
+  background: linear-gradient(#0000, #222 30% 100%);
+  box-shadow: 0 0 20px 10px #0007;
+  border-radius: 0.6rem;
+}
+article.road-segment .card h1 {
+  font-size: 2rem;
+  color: #ff1;
+}
+article.road-segment .card .sub-title {
+  font-size: 1.5rem;
+}
+article.road-segment .card p {
+  line-height: 2;
+}
+article.road-segment .card__part2 {
+  margin-bottom: 20rem;
+  background: #222;
+}
+article.road-segment .figure-animate {
+  display: inline-block;
+  display: block;
+  margin: 300px auto;
+  border: 1px solid red;
+  text-align: center;
+  position: relative;
+}
+article.road-segment .figure-animate img {
+  border-radius: 9px;
+  max-width: 100%;
+}
+article.road-segment .figure-animate video {
+  max-width: 100%;
+}
+article.road-segment .figure-animate figcaption {
+  font-size: calc(10px + 1vw);
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000a;
+  padding: 0.5rem 1rem;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.clone-img {
+  margin: 0;
+  visibility: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(0.2);
+  z-index: -10;
+  border: 1px solid red;
+}
+@media (min-width: 850px) {
+  .clone-img {
+    left: 25%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
